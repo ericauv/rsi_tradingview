@@ -23,7 +23,7 @@ def rsi_tradingview(ohlc: pd.DataFrame, period: int = 14, round_rsi: bool = True
     :return: an array with the RSI indicator values
     """
 
-    delta = ohlc["close"].diff()
+    delta = ohlc.diff()
 
     up = delta.copy()
     up[up < 0] = 0
